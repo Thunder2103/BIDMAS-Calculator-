@@ -11,4 +11,4 @@ I've been unexpectedly busy with work over the summer so this project is all I'v
 I plan to experiement with Machine Learning next or finish a few C# / node.js projects I've left on the back burner when college starts up in a few days.  
 
 
-Update 1: 07/09/2021 fixed an issue that cuase 0's to not merge properly causing syntax errors. 
+Update 1: 07/09/2021 fixed an issue that causes 0's to not merge properly causing syntax errors. 
