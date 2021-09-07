@@ -5,12 +5,13 @@ import tkinter as tk
 
 #Calculator Button variables
 opList = ["Del", "Clr", "X", "/", "+", "-"]  
-miscList = ["0", ".", "(", ")", "Ans"]
+miscList = [".", "(", ")", "Ans"]
 index = 0 
 y = 1 
 posX = 105
 posY = 65
 numVal = 0
+zero = 0
 
 
 #Calculations/Merging list variables. 
@@ -197,9 +198,7 @@ def OnClickEvent(operationStore,n, i, numBuffer, operatorCheck):
 
     #merged indexes in list to form the numbers and operators the user inputs 
     while(i < len(operationStore)):
-        
         if(operationStore[i] == "+" or operationStore[i] == "-" or operationStore[i] == "*" or operationStore[i] == "/" or operationStore[i] == "(" or operationStore[i] == ")" ):
-            
             if(operationStore[0] == "-" or (operationStore[i] == "-" and (operationStore[i-1] == "+" or operationStore[i-1] == "-" or operationStore[i-1] == "*" or operationStore[i-1] == "/" or operationStore[i-1] == "(" or operationStore[i-1] == ")"))):
                 operatorCheck = False 
             
@@ -231,7 +230,7 @@ def OnClickEvent(operationStore,n, i, numBuffer, operatorCheck):
                 i += 1 
                     
 
-    #print(operationStore)
+    print(operationStore)
    
         
     
@@ -334,7 +333,7 @@ def EqualsClickEvent(operationStore,functionDict, bidCounter, bidIndex, opCounte
 # creates and places Exit and equals button.  
 btnExit = tk.Button(text = "Exit", width = 5, height = 2, command = window.destroy).place(x = posX, y = posY + 200)
 btnEqual = tk.Button(text = "=", width = 5, height = 2, command = lambda: EqualsClickEvent(operationStore,functionDict, bidCounter, bidIndex, opCounter, bracetsCheck)).place(x = posX + 100, y = posY + 200)
-
+btnZer0 = tk.Button(text = "0", width = 5, height = 2, command = lambda: OnClickEvent(operationStore, zero, i, numBuffer, operatorCheck)).place(x = posX-100, y = posY+150)
 #creates and places button 1 - 9. 
 def NumberButtons(y, posX, posY, numVal):
     while (y <= 3):
@@ -344,6 +343,7 @@ def NumberButtons(y, posX, posY, numVal):
             posX -= 50 
         y+=1 
         i = 0  
+
         posY += 50
         posX = 105 
 
@@ -363,8 +363,8 @@ def OperatorButtons(y, posX, posY, opList, index):
 
 #creates and places 0, ., (, ), Ans buttons 
 def MiscButtons(y, posX, posY, index, miscList):
-        for i in range(5):
-            tk.Button(text = str(miscList[index]), width = 5, height = 2, command = lambda index = index: OnClickEvent(operationStore,miscList[index], i, numBuffer, operatorCheck)).place(x = posX - 100, y = posY + 150)
+        for i in range(4):
+            tk.Button(text = str(miscList[index]), width = 5, height = 2, command = lambda index = index: OnClickEvent(operationStore,miscList[index], i, numBuffer, operatorCheck)).place(x = posX - 50, y = posY + 150)
             index += 1  
             posX += 50 
         
