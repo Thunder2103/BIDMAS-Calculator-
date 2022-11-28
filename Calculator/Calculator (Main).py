@@ -106,7 +106,6 @@ functionDict = {
 
 } 
 
-
 #adding/removing text on the calculator:
 
 #adds text
@@ -139,10 +138,6 @@ def labelSyntaxError():
     s = displayText.get()
     s = 'Syntax Error'
     displayText.set(s)
-
-
-
-
 
 
 #Handles whenever a button is clicked - stores value in a list. 
@@ -232,16 +227,7 @@ def OnClickEvent(operationStore,n, i, numBuffer, operatorCheck):
 
     print(operationStore)
    
-        
-    
-   
 
-    
-
-
-
-
-    
 #handles whenever equals is clicked - does calculations. 
 def EqualsClickEvent(operationStore,functionDict, bidCounter, bidIndex, opCounter, bracetsCheck):  
     if(operationStore == []):
@@ -313,22 +299,8 @@ def EqualsClickEvent(operationStore,functionDict, bidCounter, bidIndex, opCounte
     else:
         labelTextAnswer(operationStore[0])
         global ansStore
-        ansStore = operationStore[-1] 
-        #print("ansStore:", ansStore)  
+        ansStore = operationStore[-1]  
         operationStore.clear()
-
-
-
-
-    
-
-    
-
-
-
-
-   
-      
 
 # creates and places Exit and equals button.  
 btnExit = tk.Button(text = "Exit", width = 5, height = 2, command = window.destroy).place(x = posX, y = posY + 200)
@@ -347,7 +319,6 @@ def NumberButtons(y, posX, posY, numVal):
         posY += 50
         posX = 105 
 
- 
  #creates and places Del, Clr, X, /, -, + buttons
 def OperatorButtons(y, posX, posY, opList, index):
     while(y <= 3):
@@ -360,7 +331,6 @@ def OperatorButtons(y, posX, posY, opList, index):
         posY += 50 
         posX = 105 
 
-
 #creates and places 0, ., (, ), Ans buttons 
 def MiscButtons(y, posX, posY, index, miscList):
         for i in range(4):
@@ -368,26 +338,12 @@ def MiscButtons(y, posX, posY, index, miscList):
             index += 1  
             posX += 50 
         
-        
- 
-
-
-
-
-
-
 # runs functions for buttons 
 NumberButtons(y, posX, posY, numVal)
 OperatorButtons(y, posX, posY, opList, index)
 MiscButtons(y, posX, posY, index, miscList)
 title.pack()
 display.pack() 
-
-
-
-
-
-
 
 #loads display 
 tk.mainloop()
