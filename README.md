@@ -11,4 +11,7 @@ I've been unexpectedly busy with work over the summer so this project is all I'v
 
 
 
-Update 1: 07/09/2021 fixed an issue that causes 0's to not merge properly causing syntax errors. 
+Update 1: 07/09/2021 fixed an issue that causes 0's to not merge properly causing syntax errors.  
+
+05/07/2023: If it wasn't obvious by the near two years of inactivity this repository will no longer be updated (deprecated). <br> 
+            Looking back there are plenty of things I would've changed about this project (such as the lack of comments) but I'm going to keep it up to see how my coding style has changed. 
